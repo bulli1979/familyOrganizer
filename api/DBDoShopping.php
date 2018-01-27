@@ -7,7 +7,6 @@
  */
 class DoShoppingDBHandler{
     function start($action,$json){
-        session_start();
         require_once("Tools.php");
         $tools = new Tools();
         $perm = $tools->chkRole(2);

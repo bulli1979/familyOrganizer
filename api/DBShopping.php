@@ -7,7 +7,6 @@
  */
 class ShoppingDBHandler{
     function start($action,$json){
-        session_start();
         require("Tools.php");
         $tools = new Tools();
         $perm = $tools->chkRole(3);

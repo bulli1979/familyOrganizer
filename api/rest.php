@@ -8,6 +8,9 @@
 // get the HTTP method, path and body of the request
 $method = $_SERVER['REQUEST_METHOD'];
 header('Content-Type: application/json');
+ini_set('session.gc_maxlifetime',3600);
+session_set_cookie_params(3600);
+session_start();
 switch($method){
     case "GET" : handleGet();
         break;

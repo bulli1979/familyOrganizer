@@ -7,7 +7,6 @@
  */
 class TaskDBHandler{
     function start($action,$json){
-        session_start();
         require("SQLConnector.php");
         $connector = new SQLConnector();
         $conn = $connector->getConnection();
