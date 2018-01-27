@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de-ch">
+<head>
+    <meta charset="UTF-8">
+    <title>Family Organizer</title>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap/css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js" type="text/javascript" ></script>
+    <script src="js/angular.min.js" type="text/javascript" ></script>
+    <script src="js/angular-animate.min.js" type="text/javascript" ></script>
+    <script src="js/angular-aria.min.js" type="text/javascript" ></script>
+    <script src="js/angular-ui-router.min.js" type="text/javascript" ></script>
+    <script src="js/angular-aria.min.js" type="text/javascript" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.min.js" type="text/javascript" ></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/typeahed.js"></script>
+    <script type="text/javascript" src="js/objects.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+    <script type="text/javascript" src="js/shoppingCtrl.js"></script>
+    <script type="text/javascript" src="js/shoppingEditCtrl.js"></script>
+    <script type="text/javascript" src="js/doShoppingCtrl.js"></script>
+    <script type="text/javascript" src="js/taskCtrl.js"></script>
+    <script type="text/javascript" src="js/editTaskCtrl.js"></script>
+    <script type="text/javascript" src="js/doTaskCtrl.js"></script>
+</head>
+<body ng-app="FamilyOrganizer" ng-cloak ng-controller="PageController as pageCtrl">
+<fo-nav-header></fo-nav-header>
+<div class="container-fluid">
+    <div class="row" ng-init="initApp()">
+        <div class="col-md-12 col-sm-12">
+            <div id="successBox" class="alert alert-success alert-dismissable hidden">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{Core.successText}}
+            </div>
+            <div id="errorBox" class="alert alert-danger alert-dismissable hidden">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{Core.errorText}}
+            </div>
+            <md-content class="content" ui-view></md-content>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loginDialog" role="dialog"  ng-controller="LoginController as lgCtrl">
+    <div class="modal-dialog logindialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Anmeldung</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Username<br>
+                        <input type="text" class="form-control" name="userName" ng-model="formData.user" ng-keypress="checkLoginSubmit(this,event)">
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Passwort<br>
+                        <input type="password" class="form-control" name="password"  ng-model="formData.password" ng-keypress="checkLoginSubmit(this,event)">
+                    </label>
+                </div>
+                <div id="loginAlert" class="alert alert-danger hidden">
+                    <strong>Achtung!</strong> Password oder Username falsch.
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" ng-click="doLogin()">einloggen</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

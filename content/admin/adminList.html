@@ -1,0 +1,32 @@
+<div class="adminContent" ng-controller="adminController as admin">
+
+    <div class="searchableList" ng-init="loadAllUser()" ng-show="Core.chkShow('1')">
+        <div class="form-group"><input type="text" ng-model="search">
+        <button class="btn btn-success" ng-click="createNewUser()">neuer User</button>
+        </div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Vorname</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Geburtstag</th>
+                <th>Aktion</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in userList | filter:search">
+                <td>{{user.firstname}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.birthday}}</td>
+                <td>
+                    <span class="glyphicon glyphicon-edit" aria-hidden="true" title="bearbeiten" ng-click="openUser(this)"></span>
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true" title="löschen" ng-click="deleteUser(this)"></span>
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

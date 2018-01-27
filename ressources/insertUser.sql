@@ -1,0 +1,1 @@
+insert into familyorganizer.user (`firstname`,`name`,`birthday`,`email`,`password`,`username`) values('Mirko','Eberlein','1979-06-01','mail@mirko-eberlein.de','$2y$12$XD/IOyFXkHx8twgRHfeoIeVHu3T.iPvhrmr9sVG1dwCjmcbjnQAcy','meberlein');

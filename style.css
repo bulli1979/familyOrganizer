@@ -1,0 +1,64 @@
+body{
+    padding:0;
+    margin:0;
+    color:#333333;
+}
+.logindialog{
+    width:250px;
+}
+.contentCenter{
+    margin:10px 30px;
+}
+figure{
+    margin-bottom: 10px;
+    border: 1px #666 solid;
+    padding: 5px;
+    box-shadow: 3px 3px 5px #666666;
+    cursor: pointer;
+}
+figure img{
+    width:100%;
+}
+figure figcaption{
+    text-align: center;
+    font-size:18px;
+    margin-top:5px;
+    padding-top:5px;
+    border-top:1px #999999 solid;
+}
+.valdiationTip{
+    display:none;
+    color:#a94442;
+    font-weight:bold;
+    margin-left:3px;
+}
+.has-error .valdiationTip{
+    display: inline-block;
+}
+
+.tt-menu{
+    background-color: #ffffff;
+    border:1px #ccc solid;
+    border-radius:5px;
+    padding:5px;
+    width: 100%;
+    margin-top:2px;
+}
+table .glyphicon{
+    cursor:pointer;
+}
+.hidden{
+    display:none;
+}
+.shoppingAdd{
+    cursor:pointer;
+}
+.shoppingAdd .glyphicon{
+    font-size:1.5em;
+}
+.buyed{
+    background-color:#dff0d8;
+}
+.right{
+    text-align:right;
+}
